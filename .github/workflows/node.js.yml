@@ -29,7 +29,7 @@ jobs:
     - run: npm run build --if-present
     - run: npm test
     - name: Create TAR      
-      run: tar cvzf ../advanced-macro.tar.gz -C dist .
+      run: tar cvzf advanced-macro.tar.gz -C dist .
     - name: 'Upload Artifact'
       uses: actions/upload-artifact@v2
       with:
