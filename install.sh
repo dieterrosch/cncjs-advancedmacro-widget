@@ -560,24 +560,24 @@ if [[ -n ${addons_list_entry_selected} ]]; then
 #!#			"mkdir -p ${dir}; curl -sS ${url} | tar -xvzf - -C ${dir} --strip 1"
 #!#	fi
 	
-#!#	if [[ ${addons_list_entry_selected[*]} =~ 'Pendant Shopfloor Tablet' ]]; then
-#!#		name="Pendant Shopfloor Tablet"
-#!#		url="https://codeload.github.com/cncjs/cncjs-shopfloor-tablet"
-#!#		dir="${CNCJS_EXT_DIR}/pendant-shopfloor-tablet"
-#!#		sub="tablet"
-#!#		cncjs_flags+=" --mount /${sub}:${dir}/src"
-#!#		url+="/legacy.tar.gz/latest"
-#!#		msg % "Download & Install: $name\t( http://${HOST_IP}/${sub} )\t\t[ ${dir} ]" \
-#!#			"mkdir -p ${dir}; curl -sS ${url} | tar -xvzf - -C ${dir} --strip 1"
-#!#	fi
-	
 	if [[ ${addons_list_entry_selected[*]} =~ 'AdvancedMacro Widget' ]]; then
 		name="AdvancedMacro Widget"
-		url="https://dieterrosch.github.io/cncjs-advancedmacro-widget/v1/"
+		url="https://github.com/dieterrosch/cncjs-advancedmacro-widget"
+		dir="${CNCJS_EXT_DIR}/advanced-macro"
 		sub="advanced-macro"
-		cncjs_flags+=" --mount /${sub}:${url}"
-		msg p "Setup: $name\t\t\t( http://${HOST_IP}/${sub} )\t( ${url} )"
+		cncjs_flags+=" --mount /${sub}:${dir}/src"
+		url+="/archive/v1.0.tar.gz"
+		msg % "Download & Install: $name\t( http://${HOST_IP}/${sub} )\t\t[ ${dir} ]" \
+			"mkdir -p ${dir}; curl -sS ${url} | tar -xvzf - -C ${dir} --strip 1"
 	fi
+	
+	# if [[ ${addons_list_entry_selected[*]} =~ 'AdvancedMacro Widget' ]]; then
+	# 	name="AdvancedMacro Widget"
+	# 	url="https://dieterrosch.github.io/cncjs-advancedmacro-widget/v1/"
+	# 	sub="advanced-macro"
+	# 	cncjs_flags+=" --mount /${sub}:${url}"
+	# 	msg p "Setup: $name\t\t\t( http://${HOST_IP}/${sub} )\t( ${url} )"
+	# fi
 fi
 
 
