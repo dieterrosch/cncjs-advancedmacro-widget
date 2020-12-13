@@ -7,7 +7,7 @@ import Space from '../../components/Space';
 import {
     // Workflow
     WORKFLOW_STATE_IDLE,
-    WORKFLOW_STATE_PAUSED
+    //WORKFLOW_STATE_PAUSED
 } from '../../constants';
 import i18n from '../../lib/i18n';
 import styles from './index.styl';

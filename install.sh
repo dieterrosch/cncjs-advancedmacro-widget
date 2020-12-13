@@ -568,7 +568,7 @@ if [[ -n ${addons_list_entry_selected} ]]; then
 		cncjs_flags+=" --mount /${sub}:${dir}/src"
 		url+="/archive/v1.0.tar.gz"
 		msg % "Download & Install: $name\t( http://${HOST_IP}/${sub} )\t\t[ ${dir} ]" \
-			"mkdir -p ${dir}; curl -sS ${url} | tar -xvzf - -C ${dir} --strip 1"
+			"mkdir -p ${dir}; curl -sSL ${url} | tar -xvzf - -C ${dir} --strip 1"
 	fi
 	
 	# if [[ ${addons_list_entry_selected[*]} =~ 'AdvancedMacro Widget' ]]; then
