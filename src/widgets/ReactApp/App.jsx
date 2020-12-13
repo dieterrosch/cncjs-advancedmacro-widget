@@ -80,6 +80,7 @@ class App extends PureComponent {
     };
 
     state = this.getInitialState();
+
     controllerEvent = {
         'serialport:open': (options) => {
             const { port } = options;
@@ -200,21 +201,25 @@ class App extends PureComponent {
     componentDidMount() {
         this.addControllerEvents();
     }
+
     componentWillUnmount() {
         this.removeControllerEvents();
     }
+
     addControllerEvents() {
         Object.keys(this.controllerEvent).forEach(eventName => {
             const callback = this.controllerEvent[eventName];
             controller.addListener(eventName, callback);
         });
     }
+
     removeControllerEvents() {
         Object.keys(this.controllerEvent).forEach(eventName => {
             const callback = this.controllerEvent[eventName];
             controller.removeListener(eventName, callback);
         });
     }
+
     getInitialState() {
         return {
             port: controller.port,
@@ -241,6 +246,7 @@ class App extends PureComponent {
             }
         };
     }
+
     render() {
         const {
             port,
@@ -251,13 +257,13 @@ class App extends PureComponent {
             }
         } = this.state;
 
-        if (!port) {
-            return (
-                <Container style={{ color: '#333', opacity: '.65' }}>
-                    No serial connection
-                </Container>
-            );
-        }
+        // if (!port) {
+        //     return (
+        //         <Container style={{ color: '#333', opacity: '.65' }}>
+        //             No serial connection
+        //         </Container>
+        //     );
+        // }
 
         // Map machine position to the display units
         const mpos = mapValues(this.state.machinePosition, (pos, axis) => {
@@ -279,21 +285,21 @@ class App extends PureComponent {
                     <PanelBody>
                         <TextField>
                             <TextFieldLabel>State</TextFieldLabel>
-                            {controllerType === GRBL &&
-                            <TextFieldContent>
-                                {get(controllerState, 'status.activeState')}
-                            </TextFieldContent>
-                            }
-                            {controllerType === SMOOTHIE &&
-                            <TextFieldContent>
-                                {get(controllerState, 'status.activeState')}
-                            </TextFieldContent>
-                            }
-                            {controllerType === TINYG &&
-                            <TextFieldContent>
-                                {get(controllerState, 'sr.machineState')}
-                            </TextFieldContent>
-                            }
+                            {controllerType === GRBL && (
+                                <TextFieldContent>
+                                    {get(controllerState, 'status.activeState')}
+                                </TextFieldContent>
+                            )}
+                            {controllerType === SMOOTHIE && (
+                                <TextFieldContent>
+                                    {get(controllerState, 'status.activeState')}
+                                </TextFieldContent>
+                            )}
+                            {controllerType === TINYG && (
+                                <TextFieldContent>
+                                    {get(controllerState, 'sr.machineState')}
+                                </TextFieldContent>
+                            )}
                         </TextField>
                         <TextField>
                             <TextFieldLabel>MPos X</TextFieldLabel>
