@@ -10,6 +10,9 @@ const nib = require('nib');
 const outputPath = process.env.OUTPUT_PATH || 'dist';
 const timestamp = new Date().getTime();
 const webpackConfig = {
+    node: {
+        fs: 'empty'
+    },
     entry: {
         app: [
             path.resolve(__dirname, 'src/index.js')
