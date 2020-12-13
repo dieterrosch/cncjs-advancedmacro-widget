@@ -3,7 +3,7 @@
 # ===========================================================================
 # 
 # How-to Use:
-#   curl -sSL https://raw.githubusercontent.com/cncjs/cncjs-pi-raspbian/master/cncjs_install.sh | bash
+#   curl -sSL https://raw.githubusercontent.com/dieterrosch/cncjs-advancedmacro-widget/master/install.sh | bash
 # 
 # License: MIT License
 #   Copyright (c) 2018-2020 CNCjs (https://github.com/cncjs)
