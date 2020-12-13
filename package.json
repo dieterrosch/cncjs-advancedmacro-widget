@@ -21,18 +21,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cncjs/cncjs-widget-boilerplate.git"
+    "url": "git+https://github.com/dieterrosch/cncjs-advancedmacro-widget.git"
   },
   "author": "nobody <nobody@example.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cncjs/cncjs-widget-boilerplate/issues"
+    "url": "https://github.com/dieterrosch/cncjs-advancedmacro-widget/issues"
   },
-  "homepage": "https://github.com/cncjs/cncjs-widget-boilerplate",
+  "homepage": "https://github.com/dieterrosch/cncjs-advancedmacro-widget.git",
   "keywords": [
     "cncjs",
     "widget",
-    "boilerplate",
+    "advancedmacro",
     "react"
   ],
   "peerDependencies": {},
