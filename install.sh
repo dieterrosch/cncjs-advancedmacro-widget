@@ -636,25 +636,23 @@ fi
 #!#WantedBy=multi-user.target
 #!#EOF
 	
-#!#	# -----------------------------------------------------
-#!#	
-#!#	# Service Settings
-#!#	msg i "Creating CNCjs Service Settings File (Optional)"
-#!#	# --------------------------
-#!#	sudo mkdir -p "/etc/cncjs.d/" >&4 2>&1
-#!#	cat << EOF | sudo tee "/etc/cncjs.d/default.conf" >/dev/null 2>&1
-# CNCjs Settings
-# https://github.com/cncjs/cncjs
-
+#!## -----------------------------------------------------
+#!#
+#!## Service Settings
+#!#msg i "Creating CNCjs Service Settings File (Optional)"
+#!## --------------------------
+#!#sudo mkdir -p "/etc/cncjs.d/" >&4 2>&1
+#!#cat << EOF | sudo tee "/etc/cncjs.d/default.conf" >/dev/null 2>&1
+#!#NCjs Settings
+#!#ttps://github.com/cncjs/cncjs
 #!#$(cncjs --help | grep .  | sed '1d;$d' | sed 's/^/#/')
-# cncjs --help
+#!#ncjs --help
 #!#OPTIONS="--port 8000"
-
 #!#EOF
-	
-	# -----------------------------------------------------
-	
-	# Edit Service File w/ Changes
+#!#
+#!## -----------------------------------------------------
+#!#
+#!## Edit Service File w/ Changes
 #!#	msg % "Editing CNCjs Service Start Options: OPTIONS HERE" \
 #!#		"sudo sed -i \"s|ExecStart=.*|ExecStart=$(which cncjs) ${cncjs_flags}|\" \"/etc/systemd/system/cncjs.service\" "
 #!#	
